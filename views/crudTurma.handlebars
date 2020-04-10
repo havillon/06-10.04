@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="text-dark nav-item nav-link" href="paginaInicial">Página Inicial</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link link-p" href="crudProfessor">Gerenciar professores</a>
+      <a class="nav-item nav-link link-p" href="crudTurma">Gerenciar turmas</a>
+      <a class="nav-item nav-link link-p" href="crudDisciplina">Gerenciar disciplinas</a>
+    </div>
+  </div>
+</nav>
+<div class="container center-center">
+<div class="row">
+    <div class="col-6">        
+        <form action="inserirTurma" method="POST" class="card col-12 border-0 center-vertical">
+            <h2 class="text-center">Cadastrar Turma</h2>
+            <div class="form-group py-3">
+                <input type="text" name="tur_nome" id="tur_nome" placeholder="Nome..." class=" border-purple w-100 border-top-0 border-left-0 border-right-0">
+            </div>
+            <input type="submit" value="Cadastrar"  class="mb-4 btn bg-purple text-white">
+        </form>
+    </div>
+    <div class="col-6">
+        <table class="table table-hover center-vertical">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Atualizar</th>
+                    <th scope="col">Remover</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#data}}
+                    <tr>
+                        <td>{{tur_nome}}</td>
+                        <td><a href="atualizarTurma/{{tur_id}}" class="text-purple">Atualizar</a></td>
+                        <td><a href="removerTurma/{{tur_id}}" class="text-purple">Remover</a></td>
+                    </tr>
+                {{/data}}
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="text-dark nav-item nav-link" href="paginaInicial">Página Inicial</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link link-p" href="crudProfessor">Gerenciar professores</a>
+      <a class="nav-item nav-link link-p" href="crudTurma">Gerenciar turmas</a>
+      <a class="nav-item nav-link link-p" href="crudDisciplina">Gerenciar disciplinas</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container center-center">
+	<div class="row">
+		<div class="col-6">
+			<form action="inserirProfessor" method="POST" class="card col-12 border-0 center-vertical">
+          		<h2 class="text-center">Cadastrar Professor</h2>
+				<div class="form-group py-3">
+					<input class="border-purple w-100 border-top-0 border-left-0 border-right-0" type="text" name="pro_nome" id="pro_nome" placeholder="Nome...">
+				</div>
+				<div class="form-group py-3">
+					<input class="border-purple w-100 border-top-0 border-left-0 border-right-0" type="number" name="pro_aula_semana" id="pro_aula_semana" placeholder="Nº de aulas por semana...">
+				</div>
+          		<input class="mb-4 btn bg-purple text-white" type="submit" value="Cadastrar">
+      		</form>
+    	</div>
+		<div class="col-6">
+			<table class="table table-hover center-vertical">
+				<thead>
+					<tr>
+						<th scope="col">Nome</th>
+						<th scope="col">Nº de aulas por semana</th>
+						<th scope="col">Atualizar</th>
+						<th scope="col">Remover</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#data}}
+						<tr>
+							<td>{{pro_nome}}</td>
+							<td>{{pro_aula_semana}}</td>
+							<td><a href="atualizarProfessor/{{pro_id}}" class="text-purple">Atualizar</a></td>
+							<td><a href="removerProfessor/{{pro_id}}" class="text-purple">Remover</a></td>
+						</tr>
+					{{/data}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
